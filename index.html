@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ruta de juego básica – Elden Ring</title>
+
+  <!-- Open Graph / Discord Embed -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ruta de juego básica – Elden Ring">
+  <meta property="og:description" content="Progresión lógica del inicio al final con zonas, jefes y niveles sugeridos. By Maldonado, The Fume Knight (@maldonadoyosoy) – Shadow BrotherHood.">
+  <meta property="og:image" content="social.png">
+  <meta property="og:url" content="https://solucionandotech.github.io/ruta-elden-ring/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ruta de juego básica – Elden Ring">
+  <meta name="twitter:description" content="Progresión lógica del inicio al final con zonas, jefes y niveles sugeridos. By Maldonado, The Fume Knight (@maldonadoyosoy) – Shadow BrotherHood.">
+  <meta name="twitter:image" content="social.png">
+
+  <style>
+    :root {
+      --bg:#0f1115; --fg:#eceff4; --muted:#cbd5e1;
+      --accent:#60a5fa; --accent-2:#fbbf24;
+      --card-bg:#1a1d25; --border:#2b2f3a;
+    }
+    @page { size: Letter; margin: 12mm; }
+    html, body { height: 100%; }
+    body {
+      background:var(--bg); color:var(--fg);
+      font-family:"Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height:1.35; margin:0;
+      -webkit-print-color-adjust:exact; print-color-adjust:exact;
+    }
+    .container { width:100%; max-width:100%; }
+    header.cover {
+      border:2px solid var(--border);
+      background:linear-gradient(135deg,var(--card-bg) 0%, #0000 100%);
+      padding:18mm 12mm; margin-bottom:10mm;
+    }
+    .title { font-size:28px; margin:0 0 6px; }
+    .subtitle { font-size:15px; color:var(--muted); margin:0 0 12px; }
+    .badges { display:flex; gap:8px; flex-wrap:wrap; }
+    .badge {
+      border:1px solid var(--accent); color:var(--accent);
+      padding:3px 8px; border-radius:999px; font-size:11px; font-weight:600;
+    }
+    .toc { border:1px solid var(--border); background:var(--card-bg); padding:10mm; margin-bottom:10mm; }
+    .toc h2 { font-size:16px; margin:0 0 6px; }
+    .toc ol { margin:0 0 0 18px; }
+    .toc a { color:var(--accent); text-decoration:none; }
+    .legend { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:6px; font-size:12px; }
+    .legend span { display:inline-flex; align-items:center; gap:6px; }
+    .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+    .d1{ background:var(--accent);} .d2{ background:var(--accent-2);} .d3{ background:#10b981; }
+    section.stage {
+      border:1px solid var(--border); background:var(--card-bg);
+      padding:8mm; margin-bottom:8mm; page-break-inside:avoid;
+    }
+    .stage h3 { margin:0 0 4mm; font-size:18px; border-left:4px solid var(--accent); padding-left:8px; }
+    .meta { font-size:12px; color:var(--muted); margin:0 0 3mm; }
+    .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8mm; }
+    .card { border:1px solid var(--border); background:#1f2430; padding:5mm; page-break-inside:avoid; }
+    h4 { margin:0 0 2mm; font-size:14px; }
+    ul { margin:0 0 3mm 20px; }
+    li { margin:2px 0; }
+    .tip { border-left:3px solid var(--accent-2); background:#2a2317; padding:4mm; font-size:12.5px; page-break-inside:avoid; }
+    footer {
+      font-size:11px; color:var(--muted);
+      border-top:1px dashed var(--border); margin-top:6mm; padding-top:3mm; text-align:center;
+    }
+    .discord-box {
+      background:linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      color:#000; padding:8px 14px; border-radius:8px;
+      display:inline-block; font-weight:bold; margin-top:6px;
+    }
+    .discord-link { color:#000; text-decoration:none; font-weight:bold; }
+    a { color:var(--accent); }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header class="cover">
+    <h1 class="title">Ruta de juego básica – <em>Elden Ring</em></h1>
+    <p class="subtitle">Progresión lógica del inicio al final con zonas, jefes y niveles sugeridos. Diseñada para principiantes y para avanzar sin atascos.</p>
+    <div class="badges">
+      <span class="badge">Tamaño carta</span>
+      <span class="badge">Impresión amigable</span>
+      <span class="badge">Guía flexible</span>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <h2>Contenido</h2>
+    <ol>
+      <li><a href="#etapa1">Etapa 1 – Primeros pasos (Nv 1–20)</a></li>
+      <li><a href="#etapa2">Etapa 2 – Primer avance (Nv 20–35)</a></li>
+      <li><a href="#etapa3">Etapa 3 – Llanuras y pantanos (Nv 35–50)</a></li>
+      <li><a href="#etapa4">Etapa 4 – Norte e intermedias (Nv 50–70)</a></li>
+      <li><a href="#etapa5">Etapa 5 – Altus y capital (Nv 70–90)</a></li>
+      <li><a href="#etapa6">Etapa 6 – Zonas heladas (Nv 90–110)</a></li>
+      <li><a href="#etapa7">Etapa 7 – Tramo final (Nv 110–150)</a></li>
+    </ol>
+    <div class="legend">
+      <span><i class="dot d1"></i> Jefe principal</span>
+      <span><i class="dot d2"></i> Objetivo clave</span>
+      <span><i class="dot d3"></i> Opcional útil</span>
+    </div>
+  </nav>
+
+  <!-- ETAPA 1 -->
+  <section id="etapa1" class="stage">
+    <h3>Etapa 1 – Primeros pasos (Nivel 1–20)</h3>
+    <p class="meta">Zonas: Necrolimbo (Limgrave). Meta: desbloquear montura, mapa e invocaciones.</p>
+    <div class="grid">
+      <div class="card">
+        <h4><span class="dot d2"></span> Objetivos</h4>
+        <ul>
+          <li>Activa varios Sitios de gracia y el mapa de Necrolimbo.</li>
+          <li>Consigue la montura <strong>Torrentera</strong> con Melina.</li>
+          <li>Iglesia de Elleh para compras básicas.</li>
+          <li>Ruinas de la Puerta para obtener <em>Cenizas de Guerra</em>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4><span class="dot d1"></span> Jefes recomendados</h4>
+        <ul>
+          <li><strong>Margit, el Augurio Caído</strong> (Nv ~20). Si cuesta, vuelve luego.</li>
+          <li class="muted"><em>Opcionales:</em> Caballero del Crisol; Centinela agreste nocturno.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip"><strong>Tip:</strong> Mejora tu arma a +2/+3. El sangrado es excelente contra jefes tempranos.</div>
+  </section>
+
+  <!-- ETAPA 2 -->
+  <section id="etapa2" class="stage">
+    <h3>Etapa 2 – Primer gran avance (Nivel 20–35)</h3>
+    <p class="meta">Zona: Castillo Velo Tormenta. Meta: obtener la primera Gran Runa.</p>
+    <div class="grid">
+      <div class="card">
+        <h4><span class="dot d2"></span> Objetivos</h4>
+        <ul>
+          <li>Recorre el castillo por ruta principal o lateral (murallas).</li>
+          <li>Reúne piedras de forja para subir arma a +3/+4 (Mesa Redonda).</li>
+          <li>Explora catacumbas y cavernas de Necrolimbo pendientes.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4><span class="dot d1"></span> Jefe principal</h4>
+        <ul>
+          <li><strong>Godrick el Injertado</strong> (Nv 30+). Activa su Gran Runa en la Torre Divina de Necrolimbo.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip"><strong>Opcional útil:</strong> Avatar del Árbol menor (lágrimas del frasco); obtén <em>Hoja de Sangre</em> si planeas build de sangrado.</div>
+  </section>
+
+  <!-- ETAPA 3 -->
+  <section id="etapa3" class="stage">
+    <h3>Etapa 3 – Llanuras y pantanos (Nivel 35–50)</h3>
+    <p class="meta">Zonas: Península del Llanto, Liurnia del Lago (exteriores) y Academia de Raya Lucaria.</p>
+    <div class="grid">
+      <div class="card">
+        <h4><span class="dot d2"></span> Objetivos</h4>
+        <ul>
+          <li>Explora Península del Llanto (baja dificultad, buen farmeo).</li>
+          <li>Consigue la <strong>Llave de Piedra Brillante</strong> para la Academia.</li>
+          <li>Abre cofres y limpia mazmorras de Liurnia para mejorar arma a +6/+8.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4><span class="dot d1"></span> Jefe principal</h4>
+        <ul>
+          <li><strong>Renala, Reina de la Luna Llena</strong> (Nv 50+). Permite reespecialización de atributos.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip"><strong>Tip:</strong> Si Renala se complica, completa primero Liurnia (norte y oeste) para subir de nivel y mejorar invocaciones.</div>
+  </section>
+
+  <!-- ETAPA 4 -->
+  <section id="etapa4" class="stage">
+    <h3>Etapa 4 – Expansión al norte y zonas intermedias (Nivel 50–70)</h3>
+    <p class="meta">Zonas: Mansión Caria, Aldea de los Albinaúricos, Liurnia Norte.</p>
+    <div class="grid">
+      <div class="card">
+        <h4><span class="dot d2"></span> Objetivos</h4>
+        <ul>
+          <li>Derrota a los <strong>Caballeros Carianos</strong> en la mansión.</li>
+          <li>Vence a <strong>Loretta, Guardiana Real</strong> para acceso a regiones superiores.</li>
+          <li>Inicia la <em>cadena de misiones de Ranni</em> (opcional, final alternativo).</li>
+          <li>Activa las Torres Divinas necesarias para tus Grandes Runas.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4><span class="dot d3"></span> Opcionales útiles</h4>
+        <ul>
+          <li>Busca cenizas de guerra y talismanes en Liurnia norte.</li>
+          <li>Reúne Piedras de Forja Sombría si usas armas especiales.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip"><strong>Tip:</strong> Intenta llevar arma +12/+15 antes de Altus y mejora tus invocaciones a rango intermedio.</div>
+  </section>
+
+  <!-- ETAPA 5 -->
+  <section id="etapa5" class="stage">
+    <h3>Etapa 5 – Meseta Altus y Capital (Nivel 70–90)</h3>
+    <p class="meta">Zonas: Meseta Altus, Murallas de Leyndell, Capital Real.</p>
+    <div class="grid">
+      <div class="card">
+        <h4><span class="dot d2"></span> Objetivos</h4>
+        <ul>
+          <li>Progresar por <strong>Meseta Altus</strong> hasta <strong>Leyndell</strong>.</li>
+          <li>Activar la <strong>Torre Divina de Altus</strong> para potenciar Grandes Runas.</li>
+          <li>Actualizar frascos a 10–12 cargas y recolectar lágrimas.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4><span class="dot d1"></span> Jefes principales</h4>
+        <ul>
+          <li><strong>Centinela Dracónico</strong> (antes de la puerta principal; desafiante).</li>
+          <li><strong>Morgott, Rey de los Augurios</strong> (Nv 85+).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip"><strong>Tip:</strong> Ideal llevar arma +18/+20 y talismanes defensivos. Invocaciones con daño sostenido ayudan mucho en Leyndell.</div>
+  </section>
+
+  <!-- ETAPA 6 -->
+  <section id="etapa6" class="stage">
+    <h3>Etapa 6 – Cimas y nieve (Nivel 90–110)</h3>
+    <p class="meta">Zonas: Cima de los Gigantes, Campos de Nieve Consagrados (medallón secreto, opcional).</p>
+    <div class="grid">
+      <div class="card">
+        <h4><span class="dot d2"></span> Objetivos</h4>
+        <ul>
+          <li>Avanza por la <strong>Cima de los Gigantes</strong> hasta la Forja.</li>
+          <li>Si obtienes el <em>Medallón Secreto</em>, limpia <strong>Campos de Nieve</strong> para botín de alto nivel.</li>
+          <li>Prepara resistencias al fuego y hielo según la zona.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4><span class="dot d1"></span> Jefes</h4>
+        <ul>
+          <li><strong>Gigante de Fuego</strong> (resistencia a fuego y arma con sangrado ayudan).</li>
+          <li><strong>Dúo de Piel de Dios</strong> (en <em>Farum Azula</em> poco después).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip"><strong>Tip:</strong> Congelación y sangrado siguen rindiendo muy bien. Considera invocaciones que controlen múltiples enemigos.</div>
+  </section>
+
+  <!-- ETAPA 7 -->
+  <section id="etapa7" class="stage">
+    <h3>Etapa 7 – Tramo final (Nivel 110–150)</h3>
+    <p class="meta">Zonas: Farum Azula en ruinas, Capital Cenicienta, Árbol Áureo.</p>
+    <div class="grid">
+      <div class="card">
+        <h4><span class="dot d1"></span> Secuencia de jefes</h4>
+        <ul>
+          <li><strong>Maliketh, la Espada Negra</strong>.</li>
+          <li><strong>Hoarah Loux, Guerrero</strong>.</li>
+          <li><strong>Radagon de la Orden Áurea</strong> → <strong>Bestia del Círculo Elden</strong> (final).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4><span class="dot d2"></span> Preparación</h4>
+        <ul>
+          <li>Arma +23/+25 (o +9/+10 si es Sombría).</li>
+          <li>Frascos 12–14, mezcla de Lágrimas de Cristal optimizada.</li>
+          <li>Resistencias sagradas y buena absorción física recomendadas.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip"><strong>Consejo final:</strong> Si un jefe se complica, vuelve una etapa, mejora equipo e invocaciones y regresa. La ruta es flexible por diseño.</div>
+  </section>
+
+  <footer>
+    <p><strong>Elaborada por Maldonado, The Fume Knight</strong> (<em>@maldonadoyosoy</em>)<br>
+    para la comunidad de <strong>Shadow BrotherHood</strong></p>
+    <div class="discord-box">
+      <a class="discord-link" href="https://discord.gg/TqNHTXyjze" target="_blank" rel="noopener">Únete a nuestra comunidad en Discord</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
